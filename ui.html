@@ -6,22 +6,17 @@
 </head>
 <body onload="initialise()">
 <div class="buttons">
-  <button class="button" onclick="newTab()">New</button>
+  <button class="button" onclick="newTab(event)">New</button>
   <button type="button">Open</button>
   <button type="button">Save</button>
 </div>
-<div id="tabs" class="tabs">
-  <button id="tab1" class="tab" onclick="showTab()"></button>
-</div>
-<div class="workarea">
-  <textarea id="nums" class="nums" rows="60" cols="2" onmousedown="return false;"></textarea>
-  <textarea id="code" class="code" rows="60" cols="201" nowrap="nowrap" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onscroll="scrollNums(this)">Start coding...</textarea>
-</div>
+<div id="tabs" class="tabs"><button id="tab1" class="tab" onclick="showTab(this)"></button></div>
+<div id="textareas" class="textareas"><textarea id="nums" class="nums" rows="60" cols="2" onmousedown="return false;"></textarea> <textarea id="code" class="code" rows="60" cols="201" nowrap="nowrap" wrap="off" spellcheck="false" onscroll="scrollNums(this)"></textarea></div>
 <script src = "./code.js"></script>
 </body>
 </html>
 
-<!--- 
+<!---
 
 TODO:
 
@@ -33,7 +28,6 @@ Button functionality
 |__ - New
 |__ - Open
 |__ - Save
-
 
 Syntax highlighting
 
