@@ -37,8 +37,7 @@ const newTab = (filename) => {
 const scrollNums = (codebox) => document.getElementById("nums").scrollTop = codebox.scrollTop;
 
 const initialise = () => {
-  let nums = [...Array(9999).keys()].map(i => i + 1).join("\n");
-  document.getElementById("nums").value = nums;
+  document.getElementById("nums").value = [...Array(9999).keys()].map(i => i + 1).join("\n");
   let tab = document.getElementById("tab1");
   tab.textContent = "•\xa0\xa0\xa0untitled";
   tab.className += " active";
