@@ -1,14 +1,12 @@
-document.getElementById("tabs").addEventListener('click', (event) => ([...Array(10).keys()].map(i => i + 29).includes(event.offsetX) && [...Array(10).keys()].map(i => i + 11).includes(event.offsetY)) ? closeTab(event.target.id) : 0);
+document.getElementById("tabs").addEventListener('click', (event) => {
+	//console.log(event.target.outerHTML)
+	if ([...Array(10).keys()].map(i => i + 29).includes(event.offsetX) && [...Array(10).keys()].map(i => i + 11).includes(event.offsetY)) closeTab(event.target);
+})
 
-const closeTab = (tabid) => {
-  let elemlength = 55;
-  let tabs = document.getElementById("tabs").innerHTML;
-  let tab = document.getElementById(tabid);
-  if (tab.className.indexOf("active") > -1) elemlength += 7;
-  let tabstring = tabs.substring(tabs.indexOf("<button id=\"" + tabid), tabs.indexOf("<button id=\"" + tabid) + elemlength + tabid.length + tab.innerHTML.length);
-  console.log(tabstring)
-  document.getElementById("tabs").innerHTML = tabs.replace(tabstring, "");
-  
+const closeTab = (tab) => {
+  console.log(tab.id)
+  document.getElementById("tabs").innerHTML = document.getElementById("tabs").innerHTML.replace(tab.outerHTML, "");
+  document.getElementById("textareas").innerHTML = document.getElementById("textareas").innerHTML.replace("<textarea id=\""+ tab.id + "code\" class=\"code\" rows=\"60\" cols=\"201\" nowrap=\"nowrap\" wrap=\"off\" spellcheck=\"false\" onscroll=\"scrollNums(this)\"></textarea>", "")
 }
 
 const showTab = () => {
@@ -20,7 +18,8 @@ const newTab = (filename) => {
   if (filename) {
 	  //stuff
   }
-  document.getElementById("tabs").innerHTML += "<button id=\"tab" + tabs.innerHTML.split("</b").length + "\" class=\"tab\" onclick=\"showTab()\">•\xa0\xa0\xa0untitled</button>";
+  document.getElementById("tabs").innerHTML += "<button id=\"tab" + (tabs.childElementCount + 1) + "\" class=\"tab\" onclick=\"showTab()\">•\xa0\xa0\xa0untitled</button>";
+  document.getElementById("textareas").innerHTML += "<textarea id=\"" + (tabs.childElementCount + 1) + "code\" class=\"code\" rows=\"60\" cols=\"201\" nowrap=\"nowrap\" wrap=\"off\" spellcheck=\"false\" onscroll=\"scrollNums(this)\"></textarea>";
 }
 
 const scrollNums = (codebox) => document.getElementById("nums").scrollTop = codebox.scrollTop;
