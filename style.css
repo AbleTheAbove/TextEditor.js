@@ -16,12 +16,11 @@ textarea {
   border: transparent;
   resize: none;
   color: #8c88ff;
-  outline: none; 
+  outline: none;
 }
 
-.code {padding-left: 10px;}
-
 .nums {
+	padding-right: 10px;
 	text-align: right; 
 	vertical-align: top;
 	overflow-y: hidden;
