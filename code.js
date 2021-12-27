@@ -1,7 +1,4 @@
-document.getElementById("tabs").addEventListener('click', (event) => {
-	//console.log(event.target.outerHTML)
-	if ([...Array(10).keys()].map(i => i + 29).includes(event.offsetX) && [...Array(10).keys()].map(i => i + 11).includes(event.offsetY)) closeTab(event.target);
-})
+document.getElementById("tabs").addEventListener('click', (event) => ([...Array(10).keys()].map(i => i + 29).includes(event.offsetX) && [...Array(10).keys()].map(i => i + 11).includes(event.offsetY)) ? closeTab(event.target) : 0)
 
 const closeTab = (tab) => {
   document.getElementById("tabs").innerHTML = document.getElementById("tabs").innerHTML.replace(tab.outerHTML, "");
