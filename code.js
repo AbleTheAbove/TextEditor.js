@@ -1,6 +1,4 @@
-document.getElementById("tabs").addEventListener('click', (event) => {
-  if ([...Array(10).keys()].map(i => i + 29).includes(event.offsetX) && [...Array(10).keys()].map(i => i + 11).includes(event.offsetY)) return closeTab(event.target.id);
-})
+document.getElementById("tabs").addEventListener('click', (event) => ([...Array(10).keys()].map(i => i + 29).includes(event.offsetX) && [...Array(10).keys()].map(i => i + 11).includes(event.offsetY)) ? closeTab(event.target.id) : 0);
 
 document.getElementById("code").addEventListener('click', (event) => {
   let element = document.getElementById("code");
