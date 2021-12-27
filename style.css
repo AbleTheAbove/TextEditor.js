@@ -1,0 +1,42 @@
+body {background-color: #252527;}
+
+button {
+	background-color: #252527;
+	color: #8c88ff;
+	border: none;
+	padding-top: 10px;
+	padding-left: 30px;
+	font-family: 'Courier New';
+	font-weight: bold;
+}
+
+textarea {
+  font-family: 'Courier New';
+  background-color: #252527;
+  border: transparent;
+  resize: none;
+  color: #8c88ff;
+  outline: none; 
+}
+
+.code {padding-left: 10px;}
+
+.nums {
+	text-align: right; 
+	vertical-align: top;
+	overflow-y: hidden;
+	font-family: 'Courier New';
+	cursor: default;
+}
+
+.tabs {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-left: 21px;
+	color: #8c88ff;
+}
+
+.tab {
+	display: inline;
+	cursor: default;
+}

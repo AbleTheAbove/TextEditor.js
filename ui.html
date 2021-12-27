@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="initialise()">
+<div class="buttons">
+  <button class="button" onclick="newTab()">New</button>
+  <button type="button">Open</button>
+  <button type="button">Save</button>
+</div>
+<div id="tabs" class="tabs">
+  <button id="tab1" class="tab" onclick="showTab()"></button>
+</div>
+<div class="workarea">
+  <textarea id="nums" class="nums" rows="60" cols="2" onmousedown="return false;"></textarea>
+  <textarea id="code" class="code" rows="60" cols="201" nowrap="nowrap" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onscroll="scrollNums(this)">Start coding...</textarea>
+</div>
+<script src = "./code.js"></script>
+</body>
+</html>
+
+<!--- 
+
+TODO:
+
+Fix incorrect parsing of "dot" used as tab close button when importing JS from seperate file
+
+Tabs
+|__ - Have no file open when no tabs are open
+|__ - Have different file for each tab (only show "active" tab)
+
+Button functionality
+|__ - New
+|__ - Open
+|__ - Save
+
+
+Syntax highlighting
+
+--->
